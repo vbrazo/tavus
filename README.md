@@ -1,5 +1,7 @@
 # Tavus Ruby Client
 
+[![Gem Version](https://badge.fury.io/rb/tavus.svg)](https://badge.fury.io/rb/tavus)
+
 A Ruby gem for interacting with the [Tavus API](https://tavusapi.com), providing a simple and intuitive interface for managing Conversational Video Interfaces (CVI).
 
 ## Features
