@@ -115,7 +115,7 @@ RSpec.describe Tavus::Resources::Personas do
         .to_return(status: 204, body: "")
 
       response = personas.delete("p123")
-      expect(response["success"]).to be true
+      expect(response[:success]).to be true
     end
   end
 end

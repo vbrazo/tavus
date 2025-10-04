@@ -82,7 +82,7 @@ RSpec.describe Tavus::Resources::Conversations do
         .to_return(status: 204, body: "")
 
       response = conversations.delete("c789")
-      expect(response["success"]).to be true
+      expect(response[:success]).to be true
     end
   end
 end

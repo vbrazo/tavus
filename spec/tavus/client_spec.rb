@@ -58,5 +58,64 @@ RSpec.describe Tavus::Client do
       expect(client.personas).to be(client.personas)
     end
   end
-end
 
+  describe "#replicas" do
+    it "returns a Replicas resource" do
+      client = described_class.new(api_key: api_key)
+      expect(client.replicas).to be_a(Tavus::Resources::Replicas)
+    end
+
+    it "memoizes the resource" do
+      client = described_class.new(api_key: api_key)
+      expect(client.replicas).to be(client.replicas)
+    end
+  end
+
+  describe "#objectives" do
+    it "returns an Objectives resource" do
+      client = described_class.new(api_key: api_key)
+      expect(client.objectives).to be_a(Tavus::Resources::Objectives)
+    end
+
+    it "memoizes the resource" do
+      client = described_class.new(api_key: api_key)
+      expect(client.objectives).to be(client.objectives)
+    end
+  end
+
+  describe "#guardrails" do
+    it "returns a Guardrails resource" do
+      client = described_class.new(api_key: api_key)
+      expect(client.guardrails).to be_a(Tavus::Resources::Guardrails)
+    end
+
+    it "memoizes the resource" do
+      client = described_class.new(api_key: api_key)
+      expect(client.guardrails).to be(client.guardrails)
+    end
+  end
+
+  describe "#documents" do
+    it "returns a Documents resource" do
+      client = described_class.new(api_key: api_key)
+      expect(client.documents).to be_a(Tavus::Resources::Documents)
+    end
+
+    it "memoizes the resource" do
+      client = described_class.new(api_key: api_key)
+      expect(client.documents).to be(client.documents)
+    end
+  end
+
+  describe "#videos" do
+    it "returns a Videos resource" do
+      client = described_class.new(api_key: api_key)
+      expect(client.videos).to be_a(Tavus::Resources::Videos)
+    end
+
+    it "memoizes the resource" do
+      client = described_class.new(api_key: api_key)
+      expect(client.videos).to be(client.videos)
+    end
+  end
+end
