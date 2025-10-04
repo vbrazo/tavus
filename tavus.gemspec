@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["vbrazo@gmail.com"]
 
   spec.summary = "Ruby client for the Tavus API"
-  spec.description = "A Ruby gem for interacting with the Tavus Conversational Video Interface API, supporting conversations and personas management."
+  spec.description = "A Ruby gem for interacting with the Tavus API. Provides full support for Conversational Video Interfaces (CVI), including conversations, personas, replicas, objectives, guardrails, knowledge base documents, and video generation."
   spec.homepage = "https://github.com/vbrazo/tavus"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"

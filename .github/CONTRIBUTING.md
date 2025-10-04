@@ -10,7 +10,7 @@ By participating in this project, you agree to maintain a respectful and inclusi
 
 ### Reporting Bugs
 
-1. Check if the bug has already been reported in the [Issues](https://github.com/upriser/tavus/issues)
+1. Check if the bug has already been reported in the [Issues](https://github.com/vbrazo/tavus/issues)
 2. If not, create a new issue using the bug report template
 3. Provide as much detail as possible, including:
    - Ruby version
@@ -154,9 +154,9 @@ Releases are handled by maintainers:
 
 ## Getting Help
 
-- 📖 Read the [documentation](https://github.com/upriser/tavus/blob/main/README.md)
-- 💬 Ask questions in [Discussions](https://github.com/upriser/tavus/discussions)
-- 🐛 Report bugs in [Issues](https://github.com/upriser/tavus/issues)
+- 📖 Read the [documentation](https://github.com/vbrazo/tavus/blob/main/README.md)
+- 💬 Ask questions in [Discussions](https://github.com/vbrazo/tavus/discussions)
+- 🐛 Report bugs in [Issues](https://github.com/vbrazo/tavus/issues)
 - 📧 Contact maintainers for sensitive matters
 
 ## License

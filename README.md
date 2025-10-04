@@ -67,6 +67,11 @@ client = Tavus::Client.new(
 
 ## Usage
 
+For more comprehensive examples, check the [examples/](examples/) directory:
+- [basic_usage.rb](examples/basic_usage.rb) - Basic operations with personas and conversations
+- [advanced_persona.rb](examples/advanced_persona.rb) - Advanced persona configuration with custom layers
+- [complete_workflow.rb](examples/complete_workflow.rb) - End-to-end workflow including replicas, documents, objectives, guardrails, and videos
+
 ### Conversations
 
 #### Create a Conversation
@@ -102,8 +107,8 @@ conversation = client.conversations.create(
 #   "conversation_name" => "Interview User",
 #   "status" => "active",
 #   "conversation_url" => "https://tavus.daily.co/c123456",
-#   "replica_id" => "r79e1c033f",
-#   "persona_id" => "p5317866",
+#   "replica_id" => "rfe12d8b9597",
+#   "persona_id" => "pdced222244b",
 #   "created_at" => "2025-10-04T12:00:00Z"
 # }
 ```
@@ -706,6 +711,40 @@ end
 | `rename(video_id, video_name)` | Rename a video |
 | `delete(video_id, hard: false)` | Delete a video |
 
+## JSON Patch Operations
+
+Several resources (Personas, Objectives, and Guardrails) support updates via JSON Patch operations following [RFC 6902](https://tools.ietf.org/html/rfc6902). This allows for precise, atomic updates to specific fields.
+
+### Supported Operations
+
+- `add`: Add a new field or array element
+- `remove`: Remove a field or array element
+- `replace`: Replace an existing field value
+- `copy`: Copy a value from one location to another
+- `move`: Move a value from one location to another
+- `test`: Test that a value at a location equals a specified value
+
+### Examples
+
+```ruby
+# Replace a single field
+operations = [
+  { op: 'replace', path: '/persona_name', value: 'New Name' }
+]
+
+# Multiple operations in one request
+operations = [
+  { op: 'replace', path: '/persona_name', value: 'Updated Name' },
+  { op: 'add', path: '/layers/tts/tts_emotion_control', value: 'true' },
+  { op: 'remove', path: '/layers/stt/hotwords' }
+]
+
+# Update nested fields
+operations = [
+  { op: 'replace', path: '/layers/llm/model', value: 'tavus-gpt-4o' }
+]
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -720,11 +759,9 @@ This project uses GitHub Actions for continuous integration:
 - **Linting**: RuboCop style checking
 - **Security**: Bundle audit for dependency vulnerabilities
 
-[![CI](https://github.com/upriser/tavus/actions/workflows/ci.yml/badge.svg)](https://github.com/upriser/tavus/actions/workflows/ci.yml)
-
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/upriser/tavus.
+Bug reports and pull requests are welcome on GitHub at https://github.com/vbrazo/tavus.
 
 ## License
 
@@ -734,3 +771,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 - [Tavus API Documentation](https://docs.tavus.io)
 - [Tavus Developer Portal](https://platform.tavus.io)
+- [GitHub Repository](https://github.com/vbrazo/tavus)
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a detailed list of changes and version history.
