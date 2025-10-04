@@ -710,6 +710,16 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`.
 
+## CI/CD
+
+This project uses GitHub Actions for continuous integration:
+
+- **Tests**: Runs on Ruby 2.7, 3.0, 3.1, 3.2, and 3.3
+- **Linting**: RuboCop style checking
+- **Security**: Bundle audit for dependency vulnerabilities
+
+[![CI](https://github.com/upriser/tavus/actions/workflows/ci.yml/badge.svg)](https://github.com/upriser/tavus/actions/workflows/ci.yml)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/upriser/tavus.
